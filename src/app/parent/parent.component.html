@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Homes</h2>
+    <div class="search-area">
+        <input type="text" #cityInput placeholder="Filter by city">
+        <button (click)="cityFilter = cityInput.value">Search</button>
+    </div>
+    <div class="row">
+        @for(house of houses | cityFilter: cityFilter; track $index){
+            <div class="item">
+                <app-child [house]="house"></app-child>
+            </div>
+        }
+    </div>
+</div>

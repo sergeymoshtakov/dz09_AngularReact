@@ -1,0 +1,9 @@
+<img [src]="house.photo">
+<p>{{house.name}}</p>
+<p>{{house.city}}</p>
+
+<button (click)="toggleDescription()">{{ buttonLabel }}</button>
+<div *ngIf="showDescription">
+    <p>{{house.description}}</p>
+    <p>{{house.price | currency: 'USD': 'symbol'}}</p>
+</div>
